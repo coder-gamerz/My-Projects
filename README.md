@@ -1,8 +1,8 @@
 # My-Portfolio-Projects
 This some of my work that i proud enough to show to other people. Also contains some beginner projects i thought of out of nowhere and did them.
 
-# Language(s) Used:-
-All of them are made in Python.
+# Languages
+The projects are made in Python, C, Assembly and others.
 
 # About Me
 I am a bit shortsighted and try to make anything i can get my hands on. I mean I literally sat for an entire day straight just trying to make a shell calculator that calculates area and perimeter of shapes. And that to between classes! I have 3 ½ years of experience in coding. And Btw, if you didn't realize by now, I am still under 15 years old!
