@@ -4,7 +4,6 @@ import time
 import random
 import webbrowser
 
-# If video URL file does not exist, create one
 if not os.path.isfile("youtube_alarm_videos.txt"):
 	print('Creating "youtube_alarm_videos.txt"...')
 	with open("youtube_alarm_videos.txt", "a") as alarm_file:
@@ -26,7 +25,6 @@ def check_alarm_input(alarm_time):
 			return True
 	return False
 
-# Get user input for the alarm time
 print("Set a time for the alarm (Ex. 06:30 or 18:30:00)")
 while True:
 	alarm_input = input(">> ")
@@ -39,20 +37,16 @@ while True:
 	except ValueError:
 		print("ERROR: Enter time in HH:MM or HH:MM:SS format")
 
-# Convert the alarm time from [H:M] or [H:M:S] to seconds
-seconds_hms = [3600, 60, 1] # Number of seconds in an Hour, Minute, and Second
+seconds_hms = [3600, 60, 1] 
 alarm_seconds = sum([a*b for a,b in zip(seconds_hms[:len(alarm_time)], alarm_time)])
 
-# Get the current time of day in seconds
 now = datetime.datetime.now()
 current_time_seconds = sum([a*b for a,b in zip(seconds_hms, [now.hour, now.minute, now.second])])
 
-# Calculate the number of seconds until alarm goes off
 time_diff_seconds = alarm_seconds - current_time_seconds
 
-# If time difference is negative, set alarm for next day
 if time_diff_seconds < 0:
-	time_diff_seconds += 86400 # number of seconds in a day
+	time_diff_seconds += 86400 
 
 print("Alarm set to go off in %s" % datetime.timedelta(seconds=time_diff_seconds))
 time.sleep(time_diff_seconds)
@@ -60,5 +54,7 @@ print("Wake Up!")
 with open("youtube_alarm_videos.txt", "r") as alarm_file:
 	videos = alarm_file.readlines()
 
-# Open a random video from the list
 webbrowser.open(random.choice(videos))
+
+# A simple alarm that is definetly not a rickroll
+
