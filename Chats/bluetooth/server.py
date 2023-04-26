@@ -24,3 +24,5 @@ print("Disconnected")
 
 client.close()
 server.close()
+
+# A simple server for a bluetooth chat
