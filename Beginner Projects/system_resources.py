@@ -14,3 +14,4 @@ while True:
     display_usage(psutil.cpu_percent(), psutil.virtual_memory().percent, 30)
     time.sleep(0.5)
 
+# This program shows the CPU and RAM usage of a device.
