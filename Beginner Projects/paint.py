@@ -69,3 +69,5 @@ if __name__ == '__main__':
     root.title('Paint App')
     root.mainloop()
 
+# A paint-like app on which you cna draw on with different colours
+    
