@@ -16,3 +16,6 @@ pbar(0, len(numbers))
 for e, x in enumerate(numbers):
     results.append(m.factorial(x))
     pbar(e + 1, len(numbers))
+
+# A progress bar library to use in programs
+    
