@@ -10,4 +10,4 @@ notification.notify(title= title,
                     timeout= 10,
                     toast=False)
 
-
+# A simple news notifier program which pops up as a notification
