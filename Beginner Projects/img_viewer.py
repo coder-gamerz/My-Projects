@@ -33,3 +33,5 @@ def main():
 if __name__ == "__main__":
     main()
 
+# A simple image viewer with a GUI
+    
