@@ -89,3 +89,6 @@ elif calculation_type == "perimeter":
         print("Invalid shape type")
 else:
     print("Invalid calculation type")
+
+# A simple area and perimeter calculator
+    
