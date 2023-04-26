@@ -25,3 +25,4 @@ second_block = Block(initial_block.block_hash, [t3, t4])
 print(initial_block.block_data)
 print(initial_block.block_hash)
 
+# A simple blockchain / hashing program with lots of doge
