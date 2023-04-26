@@ -20,3 +20,5 @@ except OSError:
 print("Disconnected")
 
 client.close()
+
+# A simple client for a bluetooth chat
