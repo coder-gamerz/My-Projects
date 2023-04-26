@@ -277,3 +277,6 @@ if __name__ == "__main__":
         elif 'exit' in query:
             speak('goodbye sir')
             sys.exit()
+
+# A voice assistant that helps in automating daily tasks
+
