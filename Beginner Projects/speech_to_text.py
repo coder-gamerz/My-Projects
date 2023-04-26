@@ -23,3 +23,6 @@ while True:
          
     except sr.UnknownValueError:
         print("unknown error occured")
+
+# A simple speech-to-text program
+        
