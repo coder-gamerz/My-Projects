@@ -121,7 +121,7 @@ def func():
     global sockc
     global sniff_sock
     if sockc == False:
-        sniff_sock = socket(PF_PACKET, SOCK_RAW, htons(0x0003))
+        sniff_sock = socket(socket.PF_PACKET, SOCK_RAW, htons(0x0003))
         sockc = True
 
     data = sniff_sock.recv(3072)
