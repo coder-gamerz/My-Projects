@@ -138,7 +138,7 @@ class TicTacToe:
         for i in range(9):
             if board_copy[i] == " ":
                 board_copy[i] = player
-                val = self.minimax(self.get_enemy(player), board_copy, a, b)
+                val = self.ai_algorithm(self.get_enemy(player), board_copy, a, b)
                 board_copy[i] = " "
                 if player == "O":
                     if val > best_outcome:
@@ -151,7 +151,7 @@ class TicTacToe:
 
         self.make_move(best_move)
 
-    def minimax(self, player, board, alpha, beta):
+    def ai_algorithm(self, player, board, alpha, beta):
         board_copy = copy.deepcopy(board)
 
         winner = self.game_won(board_copy)
@@ -168,7 +168,7 @@ class TicTacToe:
         for i in range(9):
             if board_copy[i] == " ":
                 board_copy[i] = player
-                val = self.minimax(self.get_enemy(player), board_copy, alpha, beta)
+                val = self.ai_algorithm(self.get_enemy(player), board_copy, alpha, beta)
                 board_copy[i] = " "
                 if player == "O":
                     best_outcome = max(best_outcome, val)
@@ -188,7 +188,7 @@ root.title("Tic-Tac-Toe Game")
 game = TicTacToe()
 
 welcome_text = StringVar()
-welcome_text.set("Welcome to Ian's Tic-Tac-Toe Game!")
+welcome_text.set("Welcome to Tic-Tac-Toe Game!")
 welcome = Label(root, textvariable=welcome_text)
 welcome.grid(row=0, column=0, columnspan=3)
 
