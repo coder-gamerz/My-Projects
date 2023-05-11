@@ -13,7 +13,7 @@ I am a bit shortsighted and try to make anything I can get my hands on. I mean, 
 I also like to play video games, mostly first-person shooters like Valorant, CS 2.0, Overwatch, Splitgate, Apex Legends, etc. I am also a huge fan of anime! I also don't like ads and slow processing, which is why I learned all about computers through learning how to make them, making their OS kernels, and even learning how to make sure that they are of great value by finding out all the ranges and budgets of GPUs and CPUs (this was all done with a little help from websites and a lot of help from Linus Tech Tips!).
 
 
-I use Opera GX as my browser. Though I keep switching, I come back every time to Opera GX. That is because of the ads and tracker blocking, the free VPN (although it is an http proxy, which is fine), and the integration of all social media, including Discord and Twitch support in the sidebar. It also has ChatGTP in its sidebar!
+I use Opera GX as my browser. Though I keep switching, I come back every time to Opera GX. That is because of the ads and tracker blocking, the free VPN (although it is an http proxy, which is fine), and the integration of all social media, including Discord and Twitch support in the sidebar. It also has ChatGPT in its sidebar!
 
 
 # Ending
