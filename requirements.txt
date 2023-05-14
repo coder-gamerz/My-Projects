@@ -1,7 +1,6 @@
 beautifulsoup4==4.12.2
 colorama==0.4.6
 cryptography==40.0.2
-EdgeGPT==0.3.8
 EdgeGPT==0.3.8.1
 Flask==2.3.1
 gmplot==1.4.1
