@@ -183,9 +183,9 @@ def main():
 		ball.display()
 
 		
-		geek1.displayScore("Geek_1 : ",
+		geek1.displayScore("Player 1 : ",
 						geek1Score, 100, 20, WHITE)
-		geek2.displayScore("Geek_2 : ",
+		geek2.displayScore("Player 2 : ",
 						geek2Score, WIDTH-100, 20, WHITE)
 
 		pygame.display.update()
