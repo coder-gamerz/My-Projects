@@ -10,7 +10,7 @@ class main:
         self.old_y = None
         self.penwidth = 5
         self.drawWidgets()
-        self.c.bind('<B1-Motion>',self.paint)#drwaing the line 
+        self.c.bind('<B1-Motion>',self.paint)
         self.c.bind('<ButtonRelease-1>',self.reset)
 
     def paint(self,e):
@@ -20,21 +20,21 @@ class main:
         self.old_x = e.x
         self.old_y = e.y
 
-    def reset(self,e):    #reseting or cleaning the canvas 
+    def reset(self,e):    
         self.old_x = None
         self.old_y = None      
 
-    def changeW(self,e): #change Width of pen through slider
+    def changeW(self,e): 
         self.penwidth = e
            
 
     def clear(self):
         self.c.delete(ALL)
 
-    def change_fg(self):  #changing the pen color
+    def change_fg(self):  
         self.color_fg=colorchooser.askcolor(color=self.color_fg)[1]
 
-    def change_bg(self):  #changing the background color canvas
+    def change_bg(self):  
         self.color_bg=colorchooser.askcolor(color=self.color_bg)[1]
         self.c['bg'] = self.color_bg
 
@@ -69,5 +69,5 @@ if __name__ == '__main__':
     root.title('Paint App')
     root.mainloop()
 
-# A paint-like app on which you cna draw on with different colours
+
     
