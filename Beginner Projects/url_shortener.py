@@ -1,18 +1,21 @@
 import pyshorteners as p
 import clipboard as cp
 from customtkinter import * #type: ignore
+import time
 
 root = CTk()
 
 def calculate():
     link = str(a.get())
     shawtty = p.Shortener()
+    global short_url
     short_url = shawtty.tinyurl.short(link)
 
     b.configure(text='Your Shortened URL is: \n'+short_url)
-    cp.copy(short_url)
-    c.configure(text='Copied Shortened Link to the Clipboard!')
     print(short_url)
+
+def copy_url():
+    cp.copy(short_url)
 
 a = CTkEntry(root, placeholder_text='Enter URL to shorten')
 a.pack()
@@ -23,7 +26,7 @@ but.pack()
 b = CTkLabel(root, text='')
 b.pack()
 
-c = CTkLabel(root, text='')
+c = CTkButton(root, text='Copy', command=copy_url)
 c.pack()
 
 root.mainloop()
