@@ -23,7 +23,6 @@ PyQt5==5.15.9
 PyQt5_sip==12.12.1
 pyscreenshot==3.1
 pyshorteners==1.0.1
-PySimpleGUI==4.60.4
 PySimpleGUI==4.60.5
 python_nmap==0.7.1
 pyttsx3==2.90
