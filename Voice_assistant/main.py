@@ -1,58 +1,35 @@
-import asyncio
-import re
-import speech_recognition as sr
-import pyttsx3
-from EdgeGPT import Chatbot, ConversationStyle
-import datetime
-import subprocess
+import gradio as gr
+import openai, config, subprocess
 
-def speak(text):
-    engine = pyttsx3.init()
-    engine.say(text)
-    engine.runAndWait()
+abc = open(r'/home/codergamerz/Documents/My-Projects/Voice_assistant/my_api_key.txt')
+openai.api_key = abc.read()
 
-def greet():
-    current_time = datetime.datetime.now()
-    hour = current_time.hour
+messages = [{"role": "system", "content": 'You are a therapist. Respond to all input in 25 words or less.'}]
 
-    if hour < 12:
-        print("Good morning sir, how can i help you today?")
-        speak("Good morning sir, how can i help you today?")
-    elif 12 <= hour < 18:
-        print("Good afternoon sir, how can i help you today?")
-        speak("Good afternoon sir, how can i help you today?")
-    else:
-        print("Good evening sir, how can i help you today?")
-        speak("Good evening sir, how can i help you today?")
+def transcribe(audio):
+    global messages
 
-async def assistant():
-    clear = lambda: subprocess.run('cls', shell = True)
-    clear()
-    greet()
-    while True:
-        bot = Chatbot(cookie_path=r'C:\Users\shrey\OneDrive\Documents\My-Projects\Voice_assistant\cookies.json')
-        r = sr.Recognizer()
-        with sr.Microphone() as source:
-            audio = r.listen(source)
-            try:
-                a = r.recognize_google(audio)
-                print("You said: " + a)
-            except sr.UnknownValueError:
-                speak("Sorry, I did not understand what you said.")
-                continue
-            except sr.RequestError as e:
-                speak("Sorry, could not request results from Google Speech Recognition service. {0}".format(e))
-                continue
+    audio_filename_with_extension = audio + '.wav'
+    os.rename(audio, audio_filename_with_extension)
+    
+    audio_file = open(audio_filename_with_extension, "rb")
+    transcript = openai.Audio.transcribe("whisper-1", audio_file)
 
-        response = await bot.ask(prompt=a, conversation_style=ConversationStyle.creative)
-        for msg in response['item']['messages']:
-            if msg['author'] == 'bot':
-                bot_response = msg['text']
+    messages.append({"role": "user", "content": transcript["text"]})
 
-        bot_response = re.sub('\[\^\d+\^\]', '', bot_response)
-        print(bot_response)
-        speak(bot_response)
-        await bot.close()
+    response = openai.ChatCompletion.create(model="gpt-3.5-turbo", messages=messages)
 
-if __name__ == '__main__':
-    asyncio.run(assistant())
+    system_message = response["choices"][0]["message"]
+    messages.append(system_message)
+
+    subprocess.call(["say", system_message['content']])
+
+    chat_transcript = ""
+    for message in messages:
+        if message['role'] != 'system':
+            chat_transcript += message['role'] + ": " + message['content'] + "\n\n"
+
+    return chat_transcript
+
+ui = gr.Interface(fn=transcribe, inputs=gr.Audio(source="microphone", type="filepath"), outputs="text").launch(share=True)
+ui.launch()
