@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>700</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>700</width>
+    <height>600</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>700</width>
+    <height>700</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>Tuner</string>
+  </property>
+  <property name="unifiedTitleAndToolBarOnMac">
+   <bool>false</bool>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <property name="styleSheet">
+    <string notr="true">#centralwidget {
+	background: #011936;
+}
+
+* {
+	font-family: 'Montserrat Bold';
+	color: #ffffff;
+}</string>
+   </property>
+   <widget class="QLabel" name="closest_pitch">
+    <property name="geometry">
+     <rect>
+      <x>50</x>
+      <y>200</y>
+      <width>601</width>
+      <height>76</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Montserrat Black</family>
+      <pointsize>48</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">#closest_pitch {
+	background: #ECBC4C;
+	font-family: 'Montserrat Black';
+}</string>
+    </property>
+    <property name="text">
+     <string>A4</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="freq">
+    <property name="geometry">
+     <rect>
+      <x>50</x>
+      <y>50</y>
+      <width>601</width>
+      <height>126</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Montserrat Bold</family>
+      <pointsize>90</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">#freq {
+	background: qlineargradient(spread:pad, x1:0.5, y1:0.45, x2:0.5, y2:1, stop:0 rgba(31, 31, 31, 0), stop:0.001 rgba(237, 37,78, 255))
+}</string>
+    </property>
+    <property name="text">
+     <string>440.0 Hz</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QWidget" name="buttons_grid" native="true">
+    <property name="geometry">
+     <rect>
+      <x>50</x>
+      <y>425</y>
+      <width>601</width>
+      <height>126</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">#buttons_grid QPushButton {
+	background: rgba(237, 37, 78, 0.3);
+	border: 1px solid rgb(237, 37, 78);
+	border-radius: 17px;
+	font: 14px 'Montserrat';
+	font-weight: 450;
+	margin: 5px;
+	padding: 6px 5px;
+}
+#buttons_grid QPushButton:pressed {
+	background: rgba(237, 37, 78, 0.8);
+}</string>
+    </property>
+    <layout class="QVBoxLayout" name="buttons">
+     <item>
+      <layout class="QHBoxLayout" name="buttons_row1">
+       <item>
+        <widget class="QPushButton" name="ukulele_soprano">
+         <property name="text">
+          <string>Soprano ukulele</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="guitar_half_down">
+         <property name="text">
+          <string>Guitar half-step down</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="guitar_st">
+         <property name="text">
+          <string>Guitar standard</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <layout class="QHBoxLayout" name="buttons_row2">
+       <item>
+        <widget class="QPushButton" name="mandolin_standard">
+         <property name="text">
+          <string>Mandolin standard</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="bass_four_string">
+         <property name="text">
+          <string>4-string bass</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="ukulele_baritone">
+         <property name="text">
+          <string>Baritone ukulele</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+    </layout>
+   </widget>
+   <widget class="Line" name="over_tone">
+    <property name="geometry">
+     <rect>
+      <x>350</x>
+      <y>275</y>
+      <width>301</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="autoFillBackground">
+     <bool>true</bool>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">#over_tone {
+	color: rgb(98, 139, 72);
+}</string>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Plain</enum>
+    </property>
+    <property name="lineWidth">
+     <number>20</number>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Horizontal</enum>
+    </property>
+   </widget>
+   <widget class="Line" name="under_tone">
+    <property name="geometry">
+     <rect>
+      <x>50</x>
+      <y>275</y>
+      <width>301</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="autoFillBackground">
+     <bool>true</bool>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">#under_tone {
+	color: rgba(237, 37,78, 255);
+}</string>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Plain</enum>
+    </property>
+    <property name="lineWidth">
+     <number>20</number>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Horizontal</enum>
+    </property>
+   </widget>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
