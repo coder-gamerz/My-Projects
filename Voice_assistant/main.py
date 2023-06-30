@@ -2,8 +2,8 @@ import gradio as gr
 import openai, config, subprocess
 import os
 
-abc = open(r'/home/codergamerz/Documents/My-Projects/Voice_assistant/my_api_key.txt')
-openai.api_key = abc.read()
+abc = os.environ['CHATGPT_API_KEY']
+openai.api_key = abc
 
 messages = [{"role": "system", "content": 'You are a therapist. Respond to all input in 25 words or less.'}]
 
