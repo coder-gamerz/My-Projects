@@ -1,5 +1,6 @@
 import gradio as gr
 import openai, config, subprocess
+import os
 
 abc = open(r'/home/codergamerz/Documents/My-Projects/Voice_assistant/my_api_key.txt')
 openai.api_key = abc.read()
