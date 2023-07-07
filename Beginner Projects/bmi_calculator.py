@@ -27,7 +27,7 @@ def calculate_bmi():
             return 'You are Healthy'
         elif e < 29.9 and e > 25:
             return 'You are Overweight'
-        else:
+        elif e > 29.9:
             return 'You are FAT AF'
 
     d = bmi(hm, c)
