@@ -1,4 +1,5 @@
 import pygame
+import sys
 
 pygame.init()
 
@@ -171,7 +172,13 @@ def main():
 		elif point == 1:
 			geek2Score += 1
 
-		
+		if geek1Score == 10:
+			print('Player 1 wins!')
+			sys.exit(0)
+
+		if geek2Score == 10:
+			print('Player 2 wins!')
+			sys.exit(0)
 		
 		
 		if point:
