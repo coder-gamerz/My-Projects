@@ -236,7 +236,7 @@ def playerSolve(x, y, number):
 				textRect.center = int(left + BOXSIZE/2),int(top+BOXSIZE/2)
 				DISPLAYSURF.blit(textSurf, textRect)
 			elif not isValidSudoku(boxy, boxx, number):
-				pygame.mixer.music.load(r'C:\Users\shrey\OneDrive\Documents\My-Projects\Games\Sudoku_AI\wrongMove.mp3')
+				pygame.mixer.music.load(r'wrongMove.mp3')
 				pygame.mixer.music.play()
 				pygame.event.wait()
 def clearNumber(x, y):
